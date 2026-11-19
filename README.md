@@ -40,6 +40,8 @@ npm run build
 
 `typecheck` runs `next typegen` first, because `next-env.d.ts` is generated and not committed.
 
+GitHub Actions (`.github/workflows/ci.yml`) runs `npm ci` and these three on every push to main and on pull requests, with Node 22.
+
 ## Running on a server
 
 The site is meant for my own VPS, not a hosting platform. It's a normal Node server:
@@ -127,4 +129,6 @@ I didn't test real mail delivery or the stats database from this copy; both need
 - `public/draco/`: the Draco mesh decoder from Google, Apache License 2.0, as shipped with three.js.
 - Fonts come from the `geist` npm package (SIL Open Font License).
 
-No license is chosen for my own code and content yet.
+## License
+
+Apache License 2.0. See [LICENSE](LICENSE).
