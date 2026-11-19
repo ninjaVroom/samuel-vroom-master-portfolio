@@ -40,6 +40,24 @@ npm run build
 
 `typecheck` runs `next typegen` first, because `next-env.d.ts` is generated and not committed.
 
+## Running on a server
+
+The site is meant for my own VPS, not a hosting platform. It's a normal Node server:
+
+```bash
+npm ci
+```
+
+```bash
+npm run build
+```
+
+```bash
+npm start -- -p 3000
+```
+
+Put the variables below in `.env.local` on the server, or in the process environment, before `npm run build`. `NEXT_PUBLIC_SITE_URL` is baked in at build time.
+
 ## Configuration
 
 | Variable | Purpose |
