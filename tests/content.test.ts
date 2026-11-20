@@ -7,7 +7,7 @@ test("discipline counts match the published projects", () => {
   assert.equal(projects.length, 10);
   assert.deepEqual(
     activeDisciplines.map((d) => [d.name, projectsIn(d.id).length]),
-    [["Development", 7], ["WordPress", 2], ["UI Design", 4], ["Project Management", 2], ["Film", 2]],
+    [["Development", 8], ["WordPress", 2], ["UI Design", 5], ["Project Management", 1], ["Film", 2]],
   );
 });
 
