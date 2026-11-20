@@ -1,7 +1,23 @@
 import postgres from "postgres";
+import { open, validate, type CityResponse, type Reader } from "maxmind";
 
 // One pooled client per server instance; the global survives dev hot reloads.
-const g = globalThis as unknown as { __sql?: postgres.Sql; __ready?: Promise<unknown> };
+const g = globalThis as unknown as { __sql?: postgres.Sql; __ready?: Promise<unknown>; __geo?: Promise<Reader<CityResponse> | null> };
+
+export type Place = { country: string | null; region: string | null; city: string | null };
+
+/** Same shape as Vercel's x-vercel-ip-* headers: ISO country, ISO subdivision, English city name. */
+export const toPlace = (r: CityResponse | null | undefined): Place | null =>
+  r ? { country: r.country?.iso_code ?? null, region: r.subdivisions?.[0]?.iso_code ?? null, city: r.city?.names?.en ?? null } : null;
+
+/** Location from a local GeoLite2-City file at GEOIP_DB, so visitor IPs never leave the server. Null when unset. */
+export async function geo(ip: string | null): Promise<Place | null> {
+  const path = process.env.GEOIP_DB;
+  if (!ip || !path || !validate(ip)) return null;
+  // ponytail: opened once per process; restart after updating the .mmdb file.
+  g.__geo ??= open<CityResponse>(path).catch((e) => (console.error("GeoIP database failed to open:", e), null));
+  return toPlace((await g.__geo)?.get(ip));
+}
 const url = process.env.DATABASE_URL;
 export const sql = url ? (g.__sql ??= postgres(url, { max: Number(process.env.DB_POOL_MAX) || 3, idle_timeout: 20, prepare: false })) : null;
 

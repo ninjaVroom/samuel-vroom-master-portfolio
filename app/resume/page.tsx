@@ -55,7 +55,7 @@ export default function ResumePage() {
           <p className="t-body">{resume.summary}</p>
         </Section>
 
-        <Section label="Core competencies">
+        <Section label="Technical skills">
           <ul className="t-body flex flex-col gap-1">
             {resume.competencies.map((c) => (
               <li key={c.label}>
@@ -65,7 +65,28 @@ export default function ResumePage() {
           </ul>
         </Section>
 
-        <Section label="Professional experience">
+        <Section label="Technical projects">
+          <div className="divide-line flex flex-col divide-y">
+            {resume.projects.map((p) => (
+              <article key={p.name} className="py-6 first:pt-0 last:pb-0">
+                <div className="flex flex-col gap-1 md:flex-row md:items-start md:justify-between md:gap-6">
+                  <h3 className="t-title">{p.name}</h3>
+                  <p className="t-caption flex shrink-0 flex-col md:max-w-[240px] md:pt-1.5 md:text-right">
+                    {(p.links ?? [{ label: p.url!.replace("https://", ""), url: p.url! }]).map((l) => (
+                      <a key={l.url} className="hover:underline" href={l.url} target="_blank" rel="noreferrer">
+                        {l.label} ↗
+                      </a>
+                    ))}
+                  </p>
+                </div>
+                <p className="t-body text-muted mt-1">{p.stack}</p>
+                <Bullets items={p.bullets} />
+              </article>
+            ))}
+          </div>
+        </Section>
+
+        <Section label="Work experience">
           <div className="divide-line flex flex-col divide-y">
             {resume.experience.map((e) => (
               <article key={e.role} className="py-6 first:pt-0 last:pb-0">
@@ -89,6 +110,21 @@ export default function ResumePage() {
                   <p className="t-caption shrink-0 md:max-w-[200px] md:pt-1.5 md:text-right">{e.dates}</p>
                 </div>
                 <p className="t-body text-muted">{e.org}</p>
+              </li>
+            ))}
+          </ul>
+        </Section>
+
+        <Section label="Additional experience">
+          <ul className="flex flex-col gap-5">
+            {resume.additional.map((e) => (
+              <li key={e.role}>
+                <div className="flex flex-col gap-1 md:flex-row md:items-start md:justify-between md:gap-6">
+                  <h3 className="t-body font-medium">{e.role}</h3>
+                  <p className="t-caption shrink-0 md:max-w-[200px] md:pt-1.5 md:text-right">{e.dates}</p>
+                </div>
+                <p className="t-body text-muted">{e.org}</p>
+                <p className="t-body mt-2">{e.line}</p>
               </li>
             ))}
           </ul>

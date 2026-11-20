@@ -6,7 +6,7 @@ import { projects } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Development first, plus design, delivery and film.",
+  description: "Full-stack web apps, custom WordPress builds and production delivery.",
 };
 
 // The URL filter is only readable in the browser, so the served HTML holds the full list.
@@ -23,7 +23,7 @@ export default function WorkPage() {
     <div className="wrap page-top">
       <p className="t-label">Work</p>
       <h1 className="t-display-sm mt-3 lg:mt-4">Selected projects</h1>
-      <p className="t-body-lg text-muted mt-4 max-w-[560px] lg:mt-6">Development first, plus design, delivery and film.</p>
+      <p className="t-body-lg text-muted mt-4 max-w-[560px] lg:mt-6">Full-stack web apps, custom WordPress builds and production delivery.</p>
       <Suspense fallback={<AllProjects />}>
         <WorkBrowser />
       </Suspense>

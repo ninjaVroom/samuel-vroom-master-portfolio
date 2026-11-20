@@ -12,7 +12,7 @@ import { site } from "@/lib/content";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: `${site.name}, ${site.title}`, template: `%s · ${site.name}` },
-  description: "Web and mobile apps in React, Next.js, TypeScript and Flutter, with 7+ years across software, delivery and media.",
+  description: "Full-stack developer with 5+ years shipping production web and mobile apps in React, Next.js, TypeScript, Python, PHP and WordPress.",
   openGraph: { siteName: site.name, type: "website" },
 };
 

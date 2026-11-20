@@ -77,8 +77,8 @@ export const projects: Project[] = [
   {
     slug: "gateway",
     figma: "https://www.figma.com/design/AEXziFfYt0eOxTHdhB5F9h/GatePass-Events",
-    title: "Gateway",
-    shortTitle: "Gateway",
+    title: "GatePass",
+    shortTitle: "GatePass",
     oneLiner: "A QR workflow that kept credentialing running at the 30th Afreximbank Annual Meetings.",
     period: "2023",
     year: "2023",
@@ -132,7 +132,7 @@ export const projects: Project[] = [
     figma: "https://www.figma.com/design/kwk5Fp8gmnIetmyjON1SmP/SETSPACE",
     title: "SETSPACE",
     shortTitle: "SETSPACE",
-    oneLiner: "A studio-booking marketplace where Postgres itself refuses double bookings. A personal build.",
+    oneLiner: "A studio-booking marketplace where Postgres itself refuses double bookings.",
     period: "2026",
     year: "2026",
     role: "Design & full-stack development",
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     figma: "https://www.figma.com/design/k2LmpOIT2veeVPeGJjgm3B/orbit",
     title: "orbit.",
     shortTitle: "orbit.",
-    oneLiner: "A project board and client-approval portal for creative studios, where the invoice follows the sign-off. A personal build.",
+    oneLiner: "A project board and client-approval portal for creative studios, where the invoice follows the sign-off.",
     period: "2026",
     year: "2026",
     role: "Design & full-stack development",
@@ -256,7 +256,7 @@ export const projects: Project[] = [
     figma: "https://www.figma.com/design/NoaCEk53nEXkMcn6CNAVdA/Alderframe-Studio---Editable-Website-Design",
     title: "Alderframe Studio",
     shortTitle: "Alderframe",
-    oneLiner: "A native WordPress block theme and site plugin for a landscape studio, with no page builder and no paid plugins. A personal build.",
+    oneLiner: "A native WordPress block theme and site plugin for a landscape studio, with no page builder and no paid plugins.",
     period: "2026",
     year: "2026",
     role: "Design & WordPress development",
@@ -321,7 +321,7 @@ export const projects: Project[] = [
     figma: "https://www.figma.com/design/NDVgk2IaX0d6WQhdut8Zv1/NORTHLINE---Elementor",
     title: "Northline Operations Advisory",
     shortTitle: "Northline",
-    oneLiner: "A WordPress and Elementor site for a manufacturing consultancy, built from custom Elementor widgets on the free stack. A personal build.",
+    oneLiner: "A WordPress and Elementor site for a manufacturing consultancy, built from custom Elementor widgets on the free stack.",
     period: "2026",
     year: "2026",
     role: "Design & WordPress development",
@@ -346,13 +346,13 @@ export const projects: Project[] = [
       { label: "Timeline", value: "2026" },
     ],
     summary:
-      "Northline is a personal project, not a real company. I built it to show I can build with WordPress and Elementor: an operations consultancy for mid-market manufacturers, made with free Elementor, a Hello Elementor child theme and a custom plugin. I designed it in Figma, then built the content model, 15 Elementor widgets, an intake form and a booking calendar, and rendered a gearbox in Blender for the home page. Every person, client, price and result in it is demo content.",
+      "Northline is a personal project, not a real company. I built it to show I can build with WordPress and Elementor: an operations consultancy for mid-market manufacturers, made with free Elementor, a Hello Elementor child theme and a custom plugin. I designed it in Figma, then built the content model, 16 Elementor widgets, an intake form and a booking calendar, and rendered a gearbox in Blender for the home page. Every person, client, price and result in it is demo content.",
     chapters: [
       {
         id: "widgets",
         anchor: "Widgets",
         title: "Elementor, with guard rails",
-        body: "Pages are built in the Elementor editor, but from 15 Northline widgets instead of loose headings and boxes: hero, proof strip, metric band, service list, packages, case grid, team, FAQ and the rest. Each widget reads its records directly, so a result changed on a case study updates everywhere it's quoted, and nobody can drag the design out of line.",
+        body: "Pages are built in the Elementor editor, but from 16 Northline widgets instead of loose headings and boxes: hero, proof strip, metric band, service list, packages, case grid, team, FAQ and the rest. Each widget reads its records directly, so a result changed on a case study updates everywhere it's quoted, and nobody can drag the design out of line.",
         problem: "Elementor makes it easy to edit a page and quietly break the design.",
       },
       {
@@ -386,7 +386,7 @@ export const projects: Project[] = [
     figma: "https://www.figma.com/design/b7VfoPB7QihNIqWMJUVi2v/SAEMIL",
     title: "Saemil AI",
     shortTitle: "Saemil AI",
-    oneLiner: "A neural-network engine written from scratch in NumPy, training three unrelated models. A personal build.",
+    oneLiner: "A neural-network engine written from scratch in NumPy, training three unrelated models.",
     period: "2026",
     year: "2026",
     role: "Machine learning & full-stack development",
@@ -445,10 +445,10 @@ export const projects: Project[] = [
     slug: "akwaaba-database",
     figma: "https://www.figma.com/design/Ifrup7NhbPOujtqxHGDgQo/Akwaaba-DB",
     title: "Akwaaba Database",
-    oneLiner: "Subscription platform with accounts, payment workflows and database-driven features.",
-    period: "2018–2023",
-    year: "2018–2023",
-    role: "Development contributor",
+    oneLiner: "Member management, outreach and attendance platform serving 200–300+ users across hospitals and institutions, modernized from PHP to Python, React and mobile.",
+    period: "2017–2023",
+    year: "2017–2023",
+    role: "Project Lead & Full-Stack Developer",
     tags: ["development"],
     featured: true,
     cover: "/images/work/akwaaba-cover.jpg",
@@ -457,35 +457,35 @@ export const projects: Project[] = [
       note: "This is a mockup recreated for this portfolio to demonstrate the app's design and flows. It is not the original Akwaaba app or the work delivered at Click Communications.",
     },
     facts: [
-      { label: "Role", value: "Development contributor" },
+      { label: "Role", value: "Project Lead & Full-Stack Developer" },
       { label: "Organization", value: "Click Communications" },
-      { label: "Timeline", value: "2018–2023" },
+      { label: "Timeline", value: "2017–2023" },
     ],
     summary:
-      "I contributed to the development of the Akwaaba Database at Click Communications, a subscription-based platform with user accounts, subscription management, payment-related workflows and database-driven functionality.",
+      "At Click Communications I architected and maintained the Akwaaba Database, a member management, outreach and attendance platform serving 200–300+ users across 3–4 institutions. I led its modernization with a 3–4 developer team, moving the legacy PHP backend to Python, rebuilding the frontend in React, and building the account, subscription and payment workflows.",
   },
   {
     slug: "akomacare",
     figma: "https://www.figma.com/design/0Y3vUwvotn0gbYfrB63j6p/Akomacare",
-    title: "AkomaCare demonstrations",
-    oneLiner: "Technical demos of a heart-care guidelines app for the Ghana Heart Initiative board.",
+    title: "AkomaCare",
+    oneLiner: "Visual rebrand, gamified engagement features and technical board demos for a heart-care guidelines mobile app.",
     period: "2023",
     year: "2023",
-    role: "Technical demonstration lead",
-    tags: ["project-management"],
+    role: "Mobile Developer & Product Lead",
+    tags: ["development", "ui-design"],
     cover: "/images/work/akomacare-cover.jpg",
     demo: {
       src: sub("akomacare"),
       note: "This is a mockup recreated for this portfolio to show the app's v1 design and flows. It is not the original AkomaCare app or the work delivered at Bisa Technologies.",
     },
     facts: [
-      { label: "Role", value: "Technical demonstration lead" },
+      { label: "Role", value: "Mobile Developer & Product Lead" },
       { label: "Type", value: "Client" },
       { label: "Organization", value: "Bisa Technologies" },
       { label: "Timeline", value: "2023" },
     ],
     summary:
-      "AkomaCare is a mobile and web app that gives frontline health workers, students and professionals pocket access to Ghana's national guidelines for managing cardiovascular disease. I led technical demonstrations for the Ghana Heart Initiative board, translating software and health data into actionable business information. The platform's later redesign was outside my scope.",
+      "AkomaCare is a mobile and web app that gives frontline health workers, students and professionals pocket access to Ghana's national guidelines for managing cardiovascular disease. At Bisa Technologies I took the existing app and revamped it, added its gamified learning section, then presented the work to the Ghana Heart Initiative board, translating software and health data into actionable business information. The platform's later redesign, after 2023, was outside my scope.",
   },
   {
     slug: "conestoga-community-video",
@@ -542,25 +542,28 @@ export const about = {
   headline: "A developer, shaped by marketing, delivery and broadcasting.",
   teaser:
     "My route into development runs through marketing, agency project leadership and broadcasting. Each has changed how I approach the work.",
-  now: "Now: completing the Google Project Management Certificate.",
+  now: "Now: open to full-time full-stack and web developer roles across Ontario or remote in Canada.",
   bio: [
-    "I'm Samuel, a full-stack developer based in Southwestern Ontario. I like taking a complicated brief and turning it into something people can use.",
-    "My route into development runs through communication, project leadership and broadcasting. Each has changed how I approach the work.",
-    "I'm looking for a full-time developer role in Southwestern Ontario or remote across Canada, and I'm open to relocating to Sarnia or London.",
+    "I'm Samuel, a full-stack developer with 5+ years of experience turning complex briefs into fast, reliable web and mobile software.",
+    "My route into engineering runs through marketing, leading small web teams and broadcasting. So I care as much about conversions, deadlines and staying calm under live pressure as I do about clean code.",
+    "I'm looking for a full-time developer role, remote across Canada or in Southwestern Ontario, and I'm open to relocation.",
   ],
   skills: [
-    { heading: "Development", items: ["React", "Next.js", "TypeScript", "Node.js", "Python", "FastAPI", "PHP", "Flutter"] },
-    { heading: "UI Design", items: ["Figma", "UI/UX wireframing", "A/B testing"] },
     {
-      heading: "Project Management",
-      items: ["Agile", "Waterfall", "Jira", "Asana", "Stakeholder management", "Risk management"],
+      heading: "Development",
+      items: ["React", "Next.js", "TypeScript", "Node.js", "Python", "FastAPI", "PHP", "WordPress", "PostgreSQL", "Flutter"],
+    },
+    { heading: "UI Design", items: ["Figma", "Adobe Creative Suite", "Canva", "UI/UX wireframing", "A/B testing"] },
+    {
+      heading: "Delivery & Collaboration",
+      items: ["Scope & timelines", "Stakeholder communication", "Agile", "Jira", "Asana", "QA testing"],
     },
     { heading: "Film", items: ["Premiere Pro", "After Effects", "Photoshop", "Motion graphics"] },
   ],
-  tools: ["PostgreSQL", "MySQL", "Docker", "AWS", "Ubuntu VPS", "Git", "GitHub", "CI/CD", "WordPress", "Payload CMS", "Stripe"],
+  tools: ["MySQL", "Docker", "AWS", "Ubuntu VPS", "Git", "GitHub", "CI/CD", "Payload CMS", "Stripe", "SEO"],
 };
 
-// From the Nov 2026 developer PDF, plus the LSP and Conestoga entries from the earlier resume (Resume/resumes.ts).
+// Mirrors the Nov 2026 developer PDF, section for section.
 export const resume = {
   updated: "Updated November 2026",
   summary:
@@ -570,31 +573,51 @@ export const resume = {
     { label: "Backend & CMS", items: "Node.js, Python, FastAPI, PHP, Payload CMS, WordPress (Block Themes, Custom PHP, Elementor, WP-CLI), REST APIs, Stripe" },
     { label: "Data & ML", items: "PostgreSQL, MySQL, SQL, NumPy" },
     { label: "DevOps & Tools", items: "Git, GitHub, CI/CD, Docker, Ubuntu VPS, AWS, Automated Testing" },
+    { label: "Design & Marketing", items: "Adobe Creative Suite, Canva, SEO" },
   ],
+  projects: [
+    {
+      name: "Setspace: Hourly Studio Booking Marketplace",
+      url: sub("setspace"),
+      stack: "Next.js · TypeScript · PostgreSQL · Stripe · Figma",
+      bullets: [
+        "Designed in Figma and built an end-to-end hourly booking marketplace for photo studios, podcast rooms and film sets across Toronto, Montréal and Vancouver.",
+        "Enforced double-booking prevention at the database layer using a PostgreSQL exclusion constraint; configured the API to return HTTP 409 with the nearest free slots and verified concurrency with automated parallel-insert tests.",
+        "Implemented financial calculations in integer cents with Canadian provincial tax logic (HST, GST, QST) and Stripe test-mode holds, captures and refunds.",
+      ],
+    },
+    {
+      name: "Orbit: Agency Project Management & Client Portal",
+      url: sub("orbit"),
+      stack: "Next.js · React · TypeScript · Node.js · Payload CMS · PostgreSQL",
+      bullets: [
+        "Built a multi-role agency platform combining an internal Kanban board, a client-facing deliverable approval portal with versioned decision history, and automated CAD invoicing (GST/HST/QST).",
+        "Centralized role-based business rules (owner, manager, member, client) into a shared reducer imported by both browser and server, ensuring server-side re-validation on every authenticated action.",
+      ],
+    },
+    {
+      name: "Saemil AI: CPU-Only Neural Network Engine",
+      url: sub("saemil"),
+      stack: "Python · NumPy · CI (Python 3.10–3.13)",
+      bullets: [
+        "Built a zero-framework neural network engine from scratch in NumPy (forward/backward passes, loss functions, Adam optimizer) running entirely on CPU, powering MNIST digit recognition (101,770 parameters, 93.75% accuracy), character-level name generation and tabular purchase-probability prediction.",
+        "Engineered an offline-first explanation bridge with deterministic template fallback so local runs never silently fail over to paid API providers.",
+      ],
+    },
+    {
+      name: "Alderframe Studio & Northline: Custom WordPress Builds",
+      links: [
+        { label: "Alderframe", url: sub("alderframe") },
+        { label: "Northline", url: sub("northline") },
+      ],
+      stack: "WordPress · PHP · Block Themes · Elementor · WP-CLI · HTML5 Canvas",
+      bullets: [
+        "Alderframe Studio: Built a custom native WordPress block theme in PHP with 26 dynamic blocks for a Toronto residential landscape architecture studio.",
+        "Northline Operations Advisory: Engineered a custom child theme and Elementor site with 15 locked, brand-safe widgets, custom post types for services and case studies, and a scroll-driven HTML5 canvas animation scrubbing pre-rendered WebP frames (generated via Python/Blender) for lightweight performance.",
+      ],
+    },
+  ] as { name: string; url?: string; links?: { label: string; url: string }[]; stack: string; bullets: string[] }[],
   experience: [
-    {
-      role: "Guest Service Agent & Night Auditor",
-      org: "Home2 Suites by Hilton — Brantford, ON",
-      dates: "Mar 2026 – Present",
-      bullets: [
-        "Manage solo overnight hotel operations, reconcile nightly revenue ledgers, trace billing discrepancies and resolve guest issues independently.",
-      ],
-    },
-    {
-      role: "Location Support Personnel (LSP)",
-      org: "Take 1 & Concepts Location Services — Ontario",
-      dates: "Aug 2024 – Present (seasonal, on call)",
-      bullets: ["Keep production crews within permit, safety and schedule rules on public sites; settle problems on site."],
-    },
-    {
-      role: "Media Production Practicum",
-      org: "Conestoga Connected & CCDTV — Kitchener, ON",
-      dates: "Jan 2024 – Apr 2025",
-      bullets: [
-        "Wrote, shot and edited Agents of Change, a four-episode series on Kitchener-Waterloo charities.",
-        "Coordinated a team of about six on the program's final production and capstone: schedule, crew, equipment.",
-      ],
-    },
     {
       role: "Senior Project Manager & Technical Lead",
       org: "Bisa Technologies — Accra, Ghana",
@@ -607,10 +630,10 @@ export const resume = {
     },
     {
       role: "Project Lead & Full-Stack Developer",
-      org: "Click Communications (formerly Advocacy Media Services; now Akwaba Solutions) — Accra, Ghana",
+      org: "Click Communications (formerly Advocacy Media Services; now Akwaaba Solutions) — Accra, Ghana",
       dates: "2017 – Jan 2023",
       bullets: [
-        "Architected and maintained Akwaba Database, a member management, outreach and employee attendance platform serving 200–300+ users across 3–4 institutions, including hospitals.",
+        "Architected and maintained Akwaaba Database, a member management, outreach and employee attendance platform serving 200–300+ users across 3–4 institutions, including hospitals.",
         "Led a full-stack modernization alongside a 3–4 developer team, migrating the legacy PHP backend to Python, rebuilding the frontend in React and shipping a companion mobile app.",
         "Built user account, subscription and payment workflows, lifting user engagement 30% across client web products through responsive redesigns, SEO tracking and analytics.",
       ],
@@ -620,6 +643,14 @@ export const resume = {
     { title: "Google Project Management Professional Certificate", org: "Coursera", dates: "2026" },
     { title: "Ontario College Diploma, Broadcasting – Television and Independent Production", org: "Conestoga College", dates: "2024 – 2025" },
     { title: "B.Sc. Marketing", org: "University of Professional Studies, Accra", dates: "2012 – 2016" },
+  ],
+  additional: [
+    {
+      role: "Guest Service Agent & Night Auditor",
+      org: "Home2 Suites by Hilton — Brantford, ON",
+      dates: "Mar 2026 – Present",
+      line: "Manage solo overnight hotel operations, reconcile nightly revenue ledgers, trace billing discrepancies and resolve guest issues independently.",
+    },
   ],
 };
 

@@ -444,14 +444,6 @@
     padding: 20px 24px;
   }
 
-  .tagline-word {
-    color: var(--ink);
-    text-decoration: underline dotted var(--accent) 1.5px;
-    text-underline-offset: 4px;
-    cursor: pointer;
-    text-align: left;
-  }
-
   .giant-name {
     container-type: inline-size;
     overflow: hidden;

@@ -1,4 +1,4 @@
-import { isBot, parseUA, ready, sql } from "../../../lib/analytics.ts";
+import { geo, isBot, parseUA, ready, sql } from "../../../lib/analytics.ts";
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const MAX_MS = 6 * 60 * 60 * 1000;
@@ -34,10 +34,15 @@ export async function POST(req: Request) {
       const { device, browser, os } = parseUA(ua);
       // The last hop is what the host's own proxy appended; earlier entries are client-supplied.
       const ip = req.headers.get("x-forwarded-for")?.split(",").at(-1)?.trim() ?? null;
+      // Vercel sends location headers; on the VPS they're absent, so fall back to the local GeoIP file.
+      const country = header(req, "x-vercel-ip-country");
+      const place = country
+        ? { country, region: header(req, "x-vercel-ip-country-region"), city: header(req, "x-vercel-ip-city") }
+        : await geo(ip);
       await sql`
         insert into visits (id, sid, vid, path, referrer, ip, country, region, city, ua, device, browser, os)
         values (${id}, ${sid}, ${vid}, ${path}, ${str(b.ref, 300) || null}, ${ip},
-          ${header(req, "x-vercel-ip-country")}, ${header(req, "x-vercel-ip-country-region")}, ${header(req, "x-vercel-ip-city")},
+          ${place?.country ?? null}, ${place?.region ?? null}, ${place?.city ?? null},
           ${ua.slice(0, 400)}, ${device}, ${browser}, ${os})
         on conflict (id) do nothing`;
     } else if (b.t === "ping") {

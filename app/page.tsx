@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { DisciplineChip, TaglineWord } from "@/components/home-bits";
+import { DisciplineChip } from "@/components/home-bits";
 import { ProjectCard } from "@/components/project-card";
 import { Reveal } from "@/components/reveal";
 import { Ribbon } from "@/components/ribbon";
@@ -9,8 +9,8 @@ import { about, activeDisciplines, projects, projectsIn, site } from "@/lib/cont
 const spec = [
   ["Role", "Full-stack developer"],
   ["Base", site.location],
-  ["Stack", "Next.js · TypeScript · Flutter"],
-  ["Open to", "Full-time roles in Ontario"],
+  ["Stack", "Next.js · TypeScript · Python · WordPress · Flutter"],
+  ["Open to", "Full-time roles · Ontario & Remote (Canada)"],
 ];
 
 const SpecStrip = ({ className }: { className: string }) => (
@@ -31,19 +31,18 @@ export default function Home() {
       <section className="wrap pt-12 md:pt-16 lg:min-h-[738px]">
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-6">
           <div className="lg:col-span-8">
-            <p className="t-label">Full-stack developer · Southwestern Ontario</p>
+            <p className="t-label">Full-stack developer · 5+ years · Southwestern Ontario</p>
             <h1 className="t-display mt-4 lg:mt-6">
               Samuel Roland
               <br />
               Vroom
             </h1>
             <p className="t-headline-light text-muted mt-4 lg:mt-6">
-              Builds for web and mobile.
-              <br />
-              Also does <TaglineWord />
+              I design and ship production web and mobile apps, from Figma and PostgreSQL to deployment.
             </p>
             <p className="t-body-lg text-muted mt-5 max-w-[560px] lg:mt-6">
-              React, Next.js, TypeScript and Flutter, with 7+ years across software, delivery and media.
+              React, Next.js, TypeScript, Python, PHP and WordPress. Background in technical leadership, agency delivery
+              and product design.
             </p>
             <div className="mt-6 flex flex-col items-start gap-3 md:flex-row md:flex-wrap md:items-center lg:mt-10">
               <Link href="/work" className="btn btn-primary btn-block">
