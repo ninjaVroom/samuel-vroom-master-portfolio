@@ -4,7 +4,7 @@ The source for my portfolio site. It shows ten projects across development, Word
 
 **Figma Design:** [MY PORTFOLIO](https://www.figma.com/design/q5AXxuMRpVFZeWa5q6OKK4/MY-PORTFOLIO)
 
-Stack: Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, three.js. Contact mail goes through [Resend](https://resend.com). Visit stats go to Postgres (I use a pooled [Neon](https://neon.tech) URL).
+Stack: Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, three.js. Contact mail goes through [Resend](https://resend.com). Visit stats go to Postgres (I use a pooled [Neon](https://neon.tech) URL), with locations looked up from a local [MaxMind GeoLite2](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data) file.
 
 ## Run it locally
 
@@ -70,6 +70,7 @@ Put the variables below in `.env.local` on the server, or in the process environ
 | `CONTACT_FROM` | Sender on a domain verified in Resend |
 | `DATABASE_URL` | Postgres connection string for visit stats; without it nothing is recorded |
 | `STATS_PASSWORD` | Password for `/stats`; without it `/stats` is a 404 |
+| `GEOIP_DB` | Path to a MaxMind GeoLite2-City `.mmdb` file on the server, for visitor locations; without it locations stay blank |
 
 ## Layout
 
@@ -90,7 +91,7 @@ I needed one place that holds all of my work. That work isn't all code: there ar
 
 ### How the work is organized
 
-There are ten projects and five disciplines. A project can carry more than one tag, so the counts overlap: Development 7, WordPress 2, UI Design 4, Project Management 2, Film 2. The counts come from the project list itself. A discipline with no projects drops off the site on its own.
+There are ten projects and five disciplines. A project can carry more than one tag, so the counts overlap: Development 8, WordPress 2, UI Design 5, Project Management 1, Film 2. The counts come from the project list itself. A discipline with no projects drops off the site on its own.
 
 Both kinds of page live under `/work/<segment>`. `/work/orbit` is a case study and `/work/development` is a discipline page; a test checks that no project slug collides with a discipline id. The Work page sorts by Featured, which puts development first, and also offers Newest. Featured is the default because "Newest" would put the 2025 film work on top.
 
@@ -104,17 +105,17 @@ The 3D ribbon on the home page uses plain three.js with a Draco-compressed model
 
 The contact form posts to `/api/contact`, which validates the message and sends it with Resend. If the key is missing or Resend fails, the form says so, keeps what the visitor typed and gives them the email address. It never shows a fake success. Messages arrive at a private inbox; the site shows a different public address.
 
-Visit stats are my own, not a third-party script. `/api/track` writes one row per page view to Postgres, skips bots and does nothing without `DATABASE_URL`. `/stats` sits behind HTTP Basic auth in `proxy.ts`, compared in constant time. Opening it marks that browser as mine so it stops counting itself. There's no rate limit on tracking yet; the code says so where it matters.
+Visit stats are my own, not a third-party script. `/api/track` writes one row per page view to Postgres, skips bots and does nothing without `DATABASE_URL`. On my VPS there are no host location headers, so the country, region and city come from a GeoLite2 file read on the server; visitor IPs aren't sent anywhere. `/stats` sits behind HTTP Basic auth in `proxy.ts`, compared in constant time. Opening it marks that browser as mine so it stops counting itself. There's no rate limit on tracking yet; the code says so where it matters.
 
 The résumé page has a PDF download. The button says "Download started", because a browser can't confirm the file was saved.
 
 ### What I checked
 
-On a clean copy of this repository, on 2026-11-19, with Node 22.19.0:
+On a clean copy of this repository, on 2026-11-20, with Node 22.19.0:
 
 - `npm ci` installed cleanly.
 - `npm run typecheck` passed after the `next typegen` fix. Before that it failed on a fresh clone, since the image types come from the generated `next-env.d.ts`.
-- `npm test` ran 11 tests, all passing: content rules, contact validation, analytics parsing.
+- `npm test` ran 12 tests, all passing: content rules, contact validation, analytics parsing and GeoIP mapping. One had failed first: the discipline counts still expected AkomaCare under Project Management.
 - `npm run build` finished and prerendered 31 pages, including every case study and discipline page.
 
 I didn't test real mail delivery or the stats database from this copy; both need private keys that aren't in the repository.
